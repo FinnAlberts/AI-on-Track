@@ -1,7 +1,6 @@
-# LLM Inference Project
+# AI on Track - Generating Athletics Articles with Large Language Models
 
-This repository contains code for using Large Language Models (LLMs) both locally and via the Hugging Face API. Follow the instructions below to set up the environment and configure access to Hugging Face's Inference API.
-
+This repository contains the code for generating athletics articles using large language models. The project uses the Hugging Face API to interact with pre-trained models and generate text based on a diverse set of prompts, leveraging different prompt engineering techniques to control the output.
 ## Requirements
 
 - Python 3.9.13
@@ -29,11 +28,7 @@ This repository contains code for using Large Language Models (LLMs) both locall
    pip install -r requirements.txt
    ```
 
-4. **Install PyTorch:**
-
-   Since PyTorch installations vary based on your operating system and hardware (e.g., CUDA support), please refer to the [official PyTorch installation guide](https://pytorch.org/get-started/locally/). Follow the instructions provided to install the appropriate version of PyTorch.
-
-5. **Create `.env` file**:
+4. **Create `.env` file**:
 
    Use the `.env-example` file in the repository as a template. Copy it and replace `<your-huggingface-api-key>` with your actual API key. Ensure the key has permissions for "Make calls to the serverless Inference API."
 
@@ -50,6 +45,6 @@ Using the Hugging Face API free tier, you can:
 This is sufficient for testing and experimenting with many Hugging Face models.
 
 ## Usage
-Run `api.py` to interact with the Hugging Face API. The script will load the model and tokenizer specified in the `.env` file and generate text based on the provided prompt. The comments in the code provide additional information on how to customize the script.
+Run the `main.py` script to generate articles using the Hugging Face API. When run, the script will prompt you to enter the filename of the file containing the data, ask you which prompt engineering technique to use, and where it should save the generated text.
 
-Run `local.py` to use the model locally. The script will load the model from Hugging Face and generate text based on the provided prompt. The comments in the code provide additional information on how to customize the script. Please take into account that running large models locally may require significant computational resources.
+Please note that generating text using large language models can be computationally expensive and may take some time. Also, the API request will time out after 120 seconds. If the request times out, you can re-run the script to try again.
