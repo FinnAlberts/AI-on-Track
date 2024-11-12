@@ -33,7 +33,7 @@ def generate_text(model_name: str, prompt: str, max_tokens: int=100) -> tuple[st
     response = client.chat_completion(messages=messages, max_tokens=max_tokens, stream=True)
 
     # Wait loop until we get data from the generator or timeout
-    timeout = 120  # seconds
+    timeout = 180  # seconds
     start_time = time.time()
     while True:
         try:
@@ -163,7 +163,7 @@ if __name__ == "__main__":
     prompt = prompt_builder(data, engineering_method, "example_reports")
 
     # Generate the text
-    report, used_tokens = generate_text(model_name, prompt, max_tokens=2000)
+    report, used_tokens = generate_text(model_name, prompt, max_tokens=4000)
 
     # Save the report to the specified path
     directory_path = os.path.dirname(save_path)
