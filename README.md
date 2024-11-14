@@ -47,4 +47,4 @@ This is sufficient for testing and experimenting with many Hugging Face models.
 ## Usage
 Run the `main.py` script to generate articles using the Hugging Face API. When run, the script will prompt you to enter the filename of the file containing the data, ask you which prompt engineering technique to use, and where it should save the generated text.
 
-Please note that generating text using large language models can be computationally expensive and may take some time. Also, the API request will time out after 120 seconds. If the request times out, you can re-run the script to try again.
+Please note that generating text using large language models can be computationally expensive and may take some time. Also, the API request will time out after 180 seconds. If the request times out, you can re-run the script to try again.
