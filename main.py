@@ -1,8 +1,10 @@
+from pathlib import Path
 from huggingface_hub import InferenceClient
 from dotenv import load_dotenv
 import os
 import random
 import time
+from bs4 import BeautifulSoup
 
 def generate_text(model_name: str, prompt: str, max_tokens: int=100) -> tuple[str, int]:
     '''
@@ -150,7 +152,15 @@ if __name__ == "__main__":
 
     # Read the data from the file
     with open(data_path, "r") as file:
-        data = file.read()
+        file_path = Path(file.name)
+        file_extension = file_path.suffix
+
+        if file_extension == '.html':
+            soup = BeautifulSoup(file, 'html.parser')
+            html_text = soup.get_text()
+            data = ' '.join(html_text.split())
+        else:
+            data = file.read()
 
     # Ask user for the type of prompt engineering to use
     engineering_method = input("Enter the type of prompt engineering to use (zero-shot, one-shot, few-shot, chain of thought, auto chain of thought): ")
