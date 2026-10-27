@@ -58,7 +58,7 @@ The article details the research questions, methods, and findings of this projec
 
 If you use this code in your work, please consider citing the article as follows:
 ```
-@article{AiOnTrack,
+@report{AiOnTrack,
   title={AI on Track: Generating Accurate and Engaging Athletics Articles with Language Models},
   author={Alberts, Finn and Vosse, Ewoud},
   year={2024},
